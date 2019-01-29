@@ -1,0 +1,14 @@
+if the other chars arn't '*'
+
+if there is diagonal in the grid
+all # are connected
+
+there has to 0 < shape > 27
+
+
+invalid chars in input
+
+"usage"
+
+- already checking for 4 * 4
+-
