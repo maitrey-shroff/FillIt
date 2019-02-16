@@ -1,19 +1,31 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_lstadd.c                                        :+:      :+:    :+:   */
+/*   flags.c                                            :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mashroff <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hirenpat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/14 11:38:49 by mashroff          #+#    #+#             */
-/*   Updated: 2018/12/14 11:38:52 by mashroff         ###   ########.fr       */
+/*   Created: 2019/02/15 21:39:12 by hirenpat          #+#    #+#             */
+/*   Updated: 2019/02/15 21:39:13 by hirenpat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../inc/fillit.h"
 
-void	ft_lstadd(t_list **alst, t_list *new)
+int	pass(t_tetris *t)
 {
-	new->next = *alst;
-	*alst = new;
+	print_grid(t->grid, t->grid_size);
+	return (1);
+}
+
+int	fail(void)
+{
+	ft_putstr("error\n");
+	return (0);
+}
+
+int	usage(void)
+{
+	ft_putstr("usage: ./fillit input_file\n");
+	return (0);
 }

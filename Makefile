@@ -1,13 +1,26 @@
+# **************************************************************************** #
+#                                                                              #
+#                                                         :::      ::::::::    #
+#    Makefile                                           :+:      :+:    :+:    #
+#                                                     +:+ +:+         +:+      #
+#    By: hirenpat <marvin@42.fr>                    +#+  +:+       +#+         #
+#                                                 +#+#+#+#+#+   +#+            #
+#    Created: 2019/02/15 21:51:44 by hirenpat          #+#    #+#              #
+#    Updated: 2019/02/15 21:52:39 by hirenpat         ###   ########.fr        #
+#                                                                              #
+# **************************************************************************** #
+
 NAME = fillit
 
-SRC = *.c
+SRC = src/*.c
 
-HEADER = *.h
+HEADER = inc/*.h
 
-FLAGS = -Wall -Wextra -Werror -g
+FLAGS = -Wall -Wextra -Werror
 
-all:
-	@gcc $(FLAGS) $(SRC) -o $(NAME) -I libft -L libft/ -lft
+all: $(NAME)
+$(NAME):
+	@gcc $(FLAGS) $(SRC) -o $(NAME)
 
 clean:
 	@/bin/rm -f *.o
@@ -15,4 +28,4 @@ clean:
 fclean: clean
 	@/bin/rm -f $(NAME)
 
-re: fclean all./
+re: fclean all

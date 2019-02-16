@@ -1,24 +1,29 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_striter.c                                       :+:      :+:    :+:   */
+/*   libft_math.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: mashroff <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: hirenpat <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2018/12/10 15:20:01 by mashroff          #+#    #+#             */
-/*   Updated: 2018/12/10 15:50:56 by mashroff         ###   ########.fr       */
+/*   Created: 2019/02/15 22:49:20 by hirenpat          #+#    #+#             */
+/*   Updated: 2019/02/15 22:49:22 by hirenpat         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "libft.h"
+#include "../inc/fillit.h"
 
-void	ft_striter(char *s, void (*f)(char *))
+int		ft_sqrt(int nb)
 {
-	if (s == NULL || f == NULL)
-		return ;
-	while (*s)
+	int	i;
+
+	i = 0;
+	if (nb > 46340 * 46340)
+		return (0);
+	while (i < nb)
 	{
-		(*f)(s);
-		s++;
+		if (((double)nb / (i * i)) <= 1)
+			return (i);
+		i++;
 	}
+	return (0);
 }
